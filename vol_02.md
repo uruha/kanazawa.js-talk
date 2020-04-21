@@ -67,3 +67,81 @@ Kotaro Chiba
       - Web RTC
       - Web Bluetooth
       - Shape Detection
+
+---
+
+## JavaScript とは
+
+---
+
+### JavaScript と ECMAScript の関係
+
+- ECMAScript は [ECMA International](http://www.ecma-international.org/default.htm) によって標準化されている **JavaScript の仕様** を指す
+- ECMA International では ECMAScript を管理番号として `262` と定めており、 ECMAScript と ECMA-262 は同じ意味になる
+
+---
+
+イメージ
+
+```
+仕様 (ECMAScript) => 実装 (JavaScript)
+```
+
+---
+
+## JavaScript の特徴
+
+- 軽量な**インタープリタ**型プログラミング言語
+- または、実行時コンパイルされる、**第一級関数**を備えたプログラミング言語とも言える
+
+---
+
+### インタープリタ
+
+- コードが上から下に実行されてコードの実行結果がすぐに返ってくる原理
+  - スクリプトを実行する際にコンパイルされてバイナリとして実行される
+- JavaScript は JIT (just-in-time compiling) という技術を用いて、 実行時の最適化を図っている
+
+---
+
+| エンジン名 | 言語 | その他 |
+| --- | --- |:--- |
+| Spider Monkey | C | JS開発当初のエンジン |
+| Rhino | Java | Node.js より前のサーバサイド側のエンジン |
+| V8 | C++ | Chrome などのブラウザでのJS実行エンジン |
+| Node.js | C++ | サーバサイドでJSが実行できるエンジン |
+
+---
+
+### 第一級関数
+
+- 定義した関数が変数 (オブジェクト) として扱うことができる言語仕様
+
+---
+
+```js
+function sayHello() {
+   return "Hello, ";
+}
+
+function greeting(helloMessage, name) {
+  console.log(`${helloMessage()}${name}`);
+}
+
+// `sayHello` を `greeting` 関数の引数として渡す
+greeting(sayHello, "JavaScript!");
+```
+
+> - 参考: [MDNより](https://developer.mozilla.org/ja/docs/Glossary/First-class_Function)
+
+---
+
+## まとめ
+
+- JavaScript
+  - そんなに歴史は長くない
+    - 仕様が乱立して、ECMAが今は取り纏めている
+    - 最近はクライアント・サーバサイド共によく使われている
+  - インタープリタ型で第一級関数を持つスクリプト言語
+    - 言語が実行される際にコンパイルされる
+    - 関数を変数などで扱うことができる
