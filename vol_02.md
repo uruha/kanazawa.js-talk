@@ -24,13 +24,13 @@ Kotaro Chiba
 
 ---
 
-前回
+### 前回
 
 [JavaScript を書き始める前にやっておきたいこと](https://speakerdeck.com/uruha/kanazawa-dot-js-meetup-number-1)
 
 ---
 
-今回
+### 今回
 
 - JavaScript の歴史
 - JavaScript とは
