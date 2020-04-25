@@ -180,3 +180,17 @@ paragraph[0].textContent = 'Hello New Wolrd !!';
     - 言語が実行される際にコンパイルされる
     - 関数を変数などで扱うことができる
     - DOM の操作もできる
+
+---
+
+## 次回予告 (参加できたら)
+
+---
+
+### JavaScript を書き始めたら知っておきたい JavaScript のこと
+
+- JavaScript についてもう少し詳しく
+  - オブジェクト指向
+  - prototype 継承
+  - 動的型付け
+  - シングルスレッド
