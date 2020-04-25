@@ -1,8 +1,10 @@
 ---
 marp: true
-theme: uncover
-_class: invert
 ---
+
+<!-- theme: uncover -->
+<!-- _class: invert -->
+<!-- paginate: true -->
 
 # JavaScript を書き始める前に知っておきたい JavaScript のこと
 
@@ -42,7 +44,7 @@ Kotaro Chiba
 - 1995 ~ LiveScript (Brendan Eich from Netscape)
   - 初期は LiveScript として開発された。後にその当時 Java が流行っていたことから、現行の JavaScript の命名となる
 - 1996 ~ Internet Explorer 3.0 搭載
-  - これ以降「ブラウザ問題」によりJSの仕様違いは著しくなる
+  - これ以降ブラウザによってJSの実装 (仕様) がことなるため非常にこれが問題になる「ブラウザ問題」
 
 ---
 
@@ -55,13 +57,13 @@ Kotaro Chiba
 
 - 2000 ~ 発展
   - Google, Amazon が積極的に JavaScript を使用したWebサービスを展開
-  - Ajax の誕生・Google map のサービス開始などで世間に衝撃を与える
+  - **Ajax** の誕生・**Google map** のサービス開始などで世間に衝撃を与える
     - 今では当たり前の技術として普及
 
 ---
 
 - 最近 ~ より便利なWebの世界に
-  - ECMAScript 更新が活発化 (ほぼ毎年)
+  - ECMAScript 更新が活発化 (先述)
     - ブラウザの機能を拡張する Web API の提供などが注目されている
       - Web VR
       - Web RTC
@@ -77,7 +79,7 @@ Kotaro Chiba
 ### JavaScript と ECMAScript の関係
 
 - ECMAScript は [ECMA International](http://www.ecma-international.org/default.htm) によって標準化されている **JavaScript の仕様** を指す
-- ECMA International では ECMAScript を管理番号として `262` と定めており、 ECMAScript と ECMA-262 は同じ意味になる
+- ECMA International では ECMAScript を管理番号として `262` と定めており、 `ECMAScript` と `ECMA-262` は同じ意味になる
 
 ---
 
@@ -93,6 +95,7 @@ Kotaro Chiba
 
 - 軽量な**インタープリタ**型プログラミング言語
 - または、実行時コンパイルされる、**第一級関数**を備えたプログラミング言語とも言える
+- Client で**DOMの操作**が行える
 
 ---
 
@@ -136,6 +139,37 @@ greeting(sayHello, "JavaScript!");
 
 ---
 
+## DOM 操作
+
+- DOM (Document Object Model) にアクセスができる
+  - テキストの更新
+  - タグ要素の追加・削除・移動
+  - スタイルの更新もできる
+  - jQuery は DOM の操作に特化
+  - etc...
+
+---
+
+```html
+<!-- 初期状態 -->
+<div>
+    <p>Hello World !</p>
+</div>
+```
+```js
+// 上記のDOM構造に対して以下の処理を実行
+const paragraph = document.getElementsByTagName('p');
+paragraph[0].textContent = 'Hello New Wolrd !!';
+```
+```html
+<!-- 上記の処理で以下になる -->
+<div>
+    <p>Hello New Wolrd !!</p>
+</div>
+```
+
+---
+
 ## まとめ
 
 - JavaScript
@@ -145,3 +179,4 @@ greeting(sayHello, "JavaScript!");
   - インタープリタ型で第一級関数を持つスクリプト言語
     - 言語が実行される際にコンパイルされる
     - 関数を変数などで扱うことができる
+    - DOM の操作もできる
