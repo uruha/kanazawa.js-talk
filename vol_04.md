@@ -158,8 +158,7 @@ function asyncFunc() {
 ```
 
 1秒後に callback 内の `() => 'exec !'` が queue へ。
-call stack 側には `end()` がいるので、  
-`end()` が先に実行されます。
+call stack 側にはまだ `end()` がいるので、先に `end()` が実行されます。
 
 ---
 
@@ -174,7 +173,7 @@ call stack 側には `end()` がいるので、
 ```
 
 Event loop が call stack に何も無いことを確認して、  
-Queue の callback関数を実行します。
+queue の callback関数を実行します。
 
 ---
 
@@ -196,3 +195,11 @@ Queue の callback関数を実行します。
     - `process.nextTick | Promise callback ...etc`
 
 Event loop が実行する queue の順序は `Microtask > Macrotask` の順
+
+---
+
+## 次回
+
+- どうしようかな... (´・ω・｀)
+  - OOPとかをプロトタイプで説明してもちょっと過去の産物になりそうなので、違うネタにする予定
+  - なにか要望ありますか？
