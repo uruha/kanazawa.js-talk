@@ -116,23 +116,23 @@ console.log(obj_01.foo, obj_02.foo);
 - Funciton
 - Date
 - Error
-- RedExp
+- RegExp
 
 ---
 
 ```js
 
-const obj = new Object();
-const arr = new Array();
+const obj  = new Object();
+const arr  = new Array();
 const date = new Date();
 
-console.log(obj instanceof Object);
-console.log(arr instanceof Array);
+console.log(obj  instanceof Object);
+console.log(arr  instanceof Array);
 console.log(date instanceof Date);
 // => 全て true が返る
 
-obj.constructor === Object;
-arr.constructor === Array;
+obj.constructor  === Object;
+arr.constructor  === Array;
 date.constructor === Date;
 // => 上記と結果が同じ
 
@@ -152,7 +152,7 @@ date.constructor === Date;
 
 ### ☝️
 
-ただ、`instanceof` は `iframe` では動作しないため、
+ただ、`instanceof` は `iframe` では**動作しない**ため、
 `Array` などの判定は `instanceof` より `Array.isArray()` が推奨されている。
 
 ---
@@ -172,6 +172,7 @@ cf_01 === cf_02 // => false
 
 const cf_03 = cf_01;
 
+// 参照先が同じものは比較（というか同じなので）できる
 cf_03 === cf_01 // => true
 
 ```
@@ -218,6 +219,8 @@ assert.deepStrictEqual(stooge, clone);
 ---
 
 ビルトインではオブジェクトの比較するためのメソッドや演算子はないため、ライブラリなどを使います。
+
+TypeScript を使用している場合は Lint やコンパイル時に検出できますね。 
 
 ---
 
